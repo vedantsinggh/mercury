@@ -8,7 +8,7 @@ import os
 
 def generate_launch_description():
 
-    pkg = get_package_share_directory('waypoint_manager')
+    pkg = get_package_share_directory('watchdog_monitor')
     waypoints_yaml = os.path.join(pkg, 'config', 'waypoints.yaml')
 
     declare_odom_topic_arg = DeclareLaunchArgument(
@@ -23,7 +23,7 @@ def generate_launch_description():
     )
 
     waypoint_detector_node = Node(
-        package='waypoint_manager',
+        package='watchdog_monitor',
         executable='waypoint_detector_node',
         name='waypoint_detector_node',
         output='screen',
