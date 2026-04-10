@@ -81,6 +81,13 @@ def generate_launch_description():
                     parameters=[{'use_sim_time': True}],
                     output='screen'
                 ),
+                Node(
+                    package='controller_manager',
+                    executable='spawner',
+                    arguments=['turret_controller'],
+                    parameters=[{'use_sim_time': True}],
+                    output='screen'
+                ),
             ]
         ),
         
