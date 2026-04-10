@@ -5,7 +5,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
 
     control_listener_node = Node(
-        package='control_listener',
+        package='watchdog_monitor',
         executable='control_listener_node',
         name='control_listener_node',
         output='screen',

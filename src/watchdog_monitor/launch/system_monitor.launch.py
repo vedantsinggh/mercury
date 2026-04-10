@@ -13,7 +13,7 @@ def generate_launch_description():
     )
 
     system_monitor_node = Node(
-        package='system_monitor',
+        package='watchdog_monitor',
         executable='system_monitor_node',
         name='system_monitor_node',
         output='screen',

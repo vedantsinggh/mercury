@@ -18,7 +18,7 @@ def generate_launch_description():
     )
 
     watchdog_node = Node(
-        package='watchdog',
+        package='watchdog_monitor',
         executable='watchdog_node',
         name='watchdog_node',
         output='screen',

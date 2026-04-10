@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 import os
 from glob import glob
 
-package_name = 'waypoint_manager'
+package_name = 'watchdog_monitor'
 
 setup(
     name=package_name,
@@ -21,12 +21,20 @@ setup(
     zip_safe=True,
     maintainer='dev',
     maintainer_email='dev@todo.todo',
-    description='Waypoint detection system for ROS2',
+    description='Combined monitoring package: system_monitor, watchdog, waypoint_manager, control_listener',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'waypoint_detector_node = waypoint_manager.waypoint_detector_node:main',
+            # system_monitor
+            'system_monitor_node = watchdog_monitor.system_monitor_node:main',
+            'monitoring_dashboard = watchdog_monitor.monitoring_dashboard:main',
+            # watchdog
+            'watchdog_node = watchdog_monitor.watchdog_node:main',
+            # waypoint_manager
+            'waypoint_detector_node = watchdog_monitor.waypoint_detector_node:main',
+            # control_listener
+            'control_listener_node = watchdog_monitor.control_listener_node:main',
         ],
     },
 )
