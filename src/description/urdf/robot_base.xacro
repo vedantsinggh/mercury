@@ -174,13 +174,13 @@
   <dynamics damping="0.1" friction="0.1"/>
 </joint>
 
-<!-- ================= CAMERA ================= -->
-<link name="camera_link">
+<!-- ================= TURRET CAMERA ================= -->
+<link name="turret_camera_link">
   <visual>
     <geometry>
       <box size="0.05 0.05 0.05"/>
     </geometry>
-    <material name="red">
+    <material name="Red">
       <color rgba="1 0 0 1"/>
     </material>
   </visual>
@@ -198,15 +198,15 @@
              ixy="0" ixz="0" iyz="0"/>
   </inertial>
 </link>
-
-<joint name="camera_joint" type="fixed">
+<joint name="turret_camera_joint" type="fixed">
   <parent link="tilt_link"/>
-  <child link="camera_link"/>
+  <child link="turret_camera_link"/>
   <origin xyz="0 0 0.03"/>
 </joint>
 
-<!-- ================= SIDE CAMERA ================= -->
-<link name="side_camera_link">
+
+<!-- ================= LANE CAMERA ================= -->
+<link name="camera_link">
   <visual>
     <geometry>
       <box size="0.05 0.05 0.05"/>
@@ -229,10 +229,11 @@
              ixy="0" ixz="0" iyz="0"/>
   </inertial>
 </link>
-<joint name="side_camera_joint" type="fixed">
+
+<joint name="camera_joint" type="fixed">
   <parent link="base_link"/>
-  <child link="side_camera_link"/>
-  <origin xyz="0.15 0 2" rpy="0 0.4 0"/>
+  <child link="camera_link"/>
+  <origin xyz="0.15 0 2" rpy="0 0.4 0"/> <!-- chcanged camera and turret positions-->
 </joint>
 
 
