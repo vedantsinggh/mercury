@@ -1,4 +1,4 @@
-````markdown
+````md
 # mercury  
 Official repository for **ICMTC UGVC-2026**
 
@@ -16,7 +16,7 @@ Official repository for **ICMTC UGVC-2026**
 
 ## First-Time Setup (Fresh Clone)
 
-> This repository **is already a ROS 2 workspace** (contains `src/`)
+> This repository is already a ROS 2 workspace (contains `src/`)
 
 ```bash
 # Clone workspace
@@ -34,13 +34,13 @@ colcon build
 
 # Source workspace
 source install/setup.bash
-```
+````
 
 ---
 
 ## Environment Setup
 
-Add all required environment variables to your `~/.bashrc` or `~/.zshrc`:
+Add this to your `~/.bashrc` or `~/.zshrc`:
 
 ```bash
 # ROS
@@ -56,7 +56,7 @@ export GZ_SIM_RESOURCE_PATH=$(ros2 pkg prefix simulation)/share/simulation/model
 export GZ_SIM_SYSTEM_PLUGIN_PATH=/opt/ros/jazzy/lib
 ```
 
-Apply changes:
+Apply:
 
 ```bash
 source ~/.bashrc
@@ -86,7 +86,7 @@ ros2 launch bringup bringup_sim.launch.py
 
 # watchdog_monitor
 
-A non-intrusive ROS 2 monitoring and observability package for the Mercury robot.  
+A non-intrusive ROS 2 monitoring and observability package for the Mercury robot.
 Runs alongside the existing stack without modifying control logic.
 
 ---
@@ -163,16 +163,19 @@ ros2 action send_goal /navigate_to_pose nav2_msgs/action/NavigateToPose \
 ## Troubleshooting
 
 ### Package not found
+
 ```bash
 source install/setup.bash
 ```
 
 ### Dependencies missing
+
 ```bash
 rosdep install --from-paths src --ignore-src -r -y
 ```
 
 ### Gazebo models not loading
+
 ```bash
 echo $GZ_SIM_RESOURCE_PATH
 ```
@@ -185,4 +188,3 @@ echo $GZ_SIM_RESOURCE_PATH
 rm -rf build/ install/ log/
 colcon build
 ```
-````
